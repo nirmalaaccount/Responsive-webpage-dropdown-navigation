@@ -1,0 +1,250 @@
+:root{
+    --dropdown-bgcolor :white;
+    --dropdown-top:3rem;
+    --dropdown-left:-2rem;
+    --dropdown1-left:10rem;
+    --dropdown-padding:8px;
+    --dropdown-size:8rem;
+    --dropdown1-size:6rem;
+    --dropdown-position:absolute;
+    --border-radius: 5px;
+    --box-shadow:1px 1px  5px 1px black
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(255, 255, 254);
+}
+.navbar{
+    display:flex;
+    justify-content: space-around;
+    padding: 2em;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.navbar li{
+ padding-left: 3em;
+ list-style: none;
+ 
+}
+.navbar a{
+    text-decoration: none;
+    color: #555;
+}
+.navbar a:hover{
+   color: #000;
+}
+.dropdown, .dropdown1{
+    position: var(--dropdown-position);
+    top: var(--dropdown-top);
+    left: var(--dropdown-left);
+    background-color:var(--dropdown-bgcolor);
+    width: var(--dropdown-size);
+    height:var(--dropdown-size);
+    padding: var(--dropdown-padding);
+    border-radius: var(--border-radius);
+    box-shadow:var(--box-shadow);
+    display: none;
+}
+.dropdown ol,.dropdown1 ol {
+    font-size: 18px;
+    font-weight: 300;
+    color: #555;
+    padding: 7px;
+}
+.dropdown1{
+    top: var(--dropdown-top);
+    left: var(--dropdown1-left);
+    width: var(--dropdown1-size);
+    height:var(--dropdown1-size);
+}
+.dropdown img{
+    padding-right: 4px;
+}
+.dropdown.active{
+    display: block;
+}
+.dropdown1.active{
+    display: block;
+}
+
+.navbar button{
+    width: 7em;
+    padding: 8px;
+    border-radius: 1em;
+    color:#555;
+    background-color: white;
+    border: 2px solid rgb(31, 31, 104);
+}
+.navbar button:hover{
+    color: #000;
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    margin: 6rem 9rem;
+    grid-gap: 3em;
+}
+.main-content .column-left{
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+
+}
+.column-left h1{
+    width: 23rem;
+    font-size:4rem;
+    line-height: 3.5rem;
+    padding-bottom: 2rem;
+}
+.column-left p{
+    font-size: 19px;
+    font-weight: 300;
+    width: 21rem;
+    padding-bottom: 3rem;
+}
+.column-left button{
+    width: 7rem;
+    padding: 0.6rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 5rem;
+}
+.column-left button:hover{
+   background-color: #fff;
+   color: #000;
+   border:1px solid #000;
+}
+.column-left .footer-img{
+    display: flex;
+    margin-left: -2.5rem;
+}
+.column-left .footer-img img{
+    padding-left: 2rem;
+    font-size:1px;
+    width: 6rem;
+}
+.column-right img{
+    width: 25em;
+    height: 27rem;
+    margin-left: 17rem;
+}
+
+.arrow-up, .arrow-down{
+    display: none;
+    position: absolute;
+    left: 7.5rem;
+    top: 9px;
+}
+.arrow-down{
+    display: block;
+}
+.arrow-ups, .arrow-downs{
+    display: none;
+    position: absolute;
+    left: 14.5rem;
+    top: 9.5px;
+}
+.arrow-downs{
+    display: block;
+}
+.mob-img{
+    display: none;
+}
+.hamburger{
+    width: 2rem;
+    height: 1rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+.close-hamburger{
+    position: absolute;
+    right: 0;
+    display: none;
+}
+@media only screen and (max-width:500px) {
+    
+    .navbar ul,.navbar button,.navbar li{
+        display: none;
+    }
+    .navbar ul li{
+        display: flex;
+        flex-direction: column;
+        padding-left: 4rem;
+        padding-top: 3rem;
+       
+    }
+    .navbar ul{
+        position: absolute;
+        background-color: white;
+        right: 0;
+        width:70%;
+        height: 130%; 
+    }
+    .navbar,.nav-icon{
+       margin-left: -79px;
+       margin-top: 0.2rem;
+    }
+    .arrow-down,.arrow-up{
+        position: absolute;
+        top: 3.5rem;
+        left: 8rem;
+    }
+    .arrow-downs,.arrow-ups{
+        position: absolute;
+        top: 7.7rem;
+        left: 8.3rem;
+    }
+    .mob-img{
+        display: block;
+        width: 23rem;
+    }
+    .main-content{
+      grid-template-columns:1fr;
+      margin:2rem;
+    }
+    .column-left h1{
+        width: 21rem;
+        font-size:2.5rem;
+        line-height: 3.5rem;
+        padding-bottom: 1rem;
+    }
+    .column-left p{
+       font-size: 20px;
+       font-weight: 200;
+       width: 19rem;
+       padding-bottom: 1rem;
+       line-height: 1.5rem;
+       text-align: center;
+    }
+    .column-left button{
+        margin-left: 5rem;
+        margin-bottom: 2.5rem;
+    }
+    .hamburger{
+        display: block;
+        margin-right: -99px;
+        margin-top: 0.5rem;
+    }
+
+    .column-right img{
+        display: none;
+    }
+
+}
+
+
+
+
